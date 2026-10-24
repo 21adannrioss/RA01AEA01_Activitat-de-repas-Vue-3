@@ -1,0 +1,44 @@
+.gestor {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.formulari input[type='text'] {
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.avis {
+  color: red;
+}
+
+.filtre {
+  display: block;
+  margin: 1rem 0;
+}
+
+.llista {
+  list-style: none;
+  padding: 0;
+}
+
+.llista li {
+  margin: 0.3rem 0;
+}
+
+.llista button {
+  margin-left: 1rem;
+}
+
+.tatxada {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.data {
+  margin-left: 0.3rem;
+}
+
+.buit {
+  color: gray;
+}
