@@ -48,7 +48,7 @@ const totalPendents = computed(() => {
 
 // Afegeix una tasca nova a la llista
 function afegirTasca() {
-  const titol = textNovaTasca.value.trim() // trec els espais dels costats
+  const titol = textNovaTasca.value.trim() // treu els espais dels costats
 
   // Si està buit no s'afegeix i es mostra l'avís
   if(titol === '') {
@@ -79,7 +79,7 @@ function eliminarTasca(idTasca) {
     <h1>Gestor de Tasques</h1>
 
     <!-- Input per escriure i el botó per afegir -->
-    <!-- v-on (@): @click executa la funció en fer clic i @keyup.enter la executa en prémer Enter -->
+    <!-- v-on: @click executa la funció en fer clic i @keyup.enter la executa en prémer Enter -->
     <div class="formulari">
       <input v-model="textNovaTasca" @keyup.enter="afegirTasca" type="text" placeholder="Escriu una nova tasca"/>
       <button @click="afegirTasca">Afegir</button>
@@ -97,7 +97,7 @@ function eliminarTasca(idTasca) {
     <!-- Si hi ha tasques o no -->
     <ul v-if="tasquesVisibles.length > 0" class="llista">
       <li v-for="tasca in tasquesVisibles" :key="tasca.id">
-        <!-- v-bind (:): :class posa la classe tatxada només si la tasca està completada -->
+        <!-- v-bind: :class posa la classe tatxada només si la tasca està completada -->
         <span :class="{tatxada: tasca.completada}">{{tasca.titol}}</span>
         <span class="data">({{tasca.dataCreacio}})</span>
 
@@ -105,7 +105,7 @@ function eliminarTasca(idTasca) {
           <span v-if="tasca.completada">Desmarcar</span>
           <span v-else>Completar</span>
         </button>
-        <!-- v-bind (:): :title posa el text que surt en passar el ratolí per sobre -->
+        <!-- v-bind: :title posa el text que surt en passar el ratolí per sobre -->
         <button @click="eliminarTasca(tasca.id)" :title="'Elimina la tasca ' + tasca.titol">🗑️</button>
       </li>
     </ul>
